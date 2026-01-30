@@ -1,0 +1,145 @@
+name: zp-note-prod
+services:
+  proxy:
+    build:
+      context: ../proxy
+    env_file:
+      - .env
+    ports:
+      - "443:443"
+    healthcheck:
+      test: "exit 0"
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.7"
+    depends_on:
+      server:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+      client:
+        condition: service_completed_successfully
+    volumes:
+      - type: bind
+        source: ../proxy/Caddyfile.new.prod
+        target: /etc/caddy/Caddyfile
+        read_only: false
+      - shared:/srv
+
+  auth:
+    build:
+      context: ../auth
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: "exit 0"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.2"
+
+  db:
+    build:
+      context: ../db
+    command: postgres -c 'max_connections=200' && postgres -c 'shared_buffers=24MB'
+    env_file:
+      - .env
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../db/sql/create-database-zp-note.sql:/docker-entrypoint-initdb.d/create_database.sql
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.3"
+
+  cache:
+    build:
+      context: ../cache
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: "exit 0"
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.4"
+
+  server:
+    build:
+      context: ../server
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npx prisma db push
+        npm start -- --host
+    env_file:
+      - .env
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+      auth:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.5"
+    # volumes:
+    #   # to have client build served by server container
+    #   - shared-tmpfs:/usr/src/app/dist_client
+
+  ## in this approach client is built and then served in server container
+  client:
+    build:
+      context: ../client
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npm install
+        npm run build
+        cp -r ./dist/* ./dist/.well-known/ ./shared/
+        exit 0
+    env_file:
+      - .env
+    healthcheck:
+      test: ["NONE"]
+    # ports:
+    #   - "5173:5173"
+    # depends_on:
+    #   server:
+    #     condition: service_healthy
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.6"
+    # profiles: ["frontend", "fullstack"]
+    volumes:
+      - shared:/usr/src/app/shared
+
+networks:
+  network_sso:
+    ipam:
+      # IP Address management
+      driver: default
+      # default = bridge
+      config:
+        - subnet: "10.0.0.0/24"
+
+volumes:
+  shared-tmpfs:
+    driver: local
+    driver_opts:
+      type: "tmpfs"
+      device: "tmpfs"
+      o: "size=24m,uid=1000"
+  shared:

@@ -1,0 +1,30 @@
+{
+	http_port 23000
+	https_port 29443
+	email "ariel@zplinux.com"
+	# debug
+}
+
+
+{$AUTH_HOST_NAME:auth.zplinux.eu}:{$AUTH_HOST_PORT:443} {
+	reverse_proxy http://auth:8080
+	encode zstd gzip
+}
+
+{$SERVER_HOST_NAME:notes.zplinux.eu}:{$SERVER_HOST_PORT:443} {
+	@server {
+		path_regexp ^/(graphql|sync|callback|logout)
+	}
+
+	handle @server {
+		reverse_proxy http://server:3000
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+
+	encode zstd gzip
+}
