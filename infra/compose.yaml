@@ -26,23 +26,19 @@ services:
       - /bin/sh
       - -c
       - |
+        cp -r /source/. .
         npm install
         npm run build
         cp -r ./dist/* ./shared/
         exit 0
     healthcheck:
-      test: ["NONE"]
-    # ports:
-    #   - "5173:5173"
-    # depends_on:
-    #   server:
-    #     condition: service_healthy
+      test: [ "NONE" ]
     networks:
       network_sso:
         ipv4_address: "10.0.0.6"
-    # profiles: ["frontend", "fullstack"]
     volumes:
       - shared:/usr/src/app/shared
+      - ../client:/source:ro
 
 networks:
   network_sso:
