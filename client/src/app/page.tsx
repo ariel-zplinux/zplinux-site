@@ -9,17 +9,9 @@ import {
   User,
   Mail,
   Cpu,
-  ShieldCheck,
-  Leaf,
-  ExternalLink,
   Menu,
   X,
-  FileText,
-  Github,
   Layers,
-  PlayCircle,
-  Smartphone,
-  Linkedin,
 } from "lucide-react";
 
 import AboutSection from "@/components/About";
@@ -69,11 +61,10 @@ export default function ZplinuxHome() {
               <button
                 key={item.id}
                 onClick={() => handleNav(item.id)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeTab === item.id
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === item.id
                     ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
                     : "text-slate-400 hover:text-white"
-                }`}
+                  }`}
               >
                 {item.label}
               </button>
