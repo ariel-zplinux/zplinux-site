@@ -10,35 +10,44 @@ export default function ProjectsSection() {
     {
       title: "ZP Note",
       status: "Work in Progress",
-      desc: "ZP Note is a WIP note taking hybrid open source app, it is delivered as a PWA to provide a standard and enriched UX.",
-      details: `ZP NOTE (https://notes.zplinux.eu) (Paris - France) (personal open source project)
+      desc: "A modern, privacy-focused hybrid note-taking app. Currently migrating from Capacitor to a robust PWA.",
+      details: (
+        <>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <p className="mb-4 text-slate-300">
+            A hybrid, open-source note-taking application designed for privacy and cross-platform compatibility. Delivered as a Progressive Web App (PWA) to ensure a seamless experience across mobile and web.
+          </p>
 
-Role: Architect / Fullstack Developer (NodeJs / React / Ionic / PWA)
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Architecture (SOA/MSA)</h4>
+          <ul className="list-disc list-inside space-y-1 text-slate-300 mb-4">
+            <li>
+              <strong className="text-white">Frontend</strong>: React, Vite, and Ionic for a responsive, native-like interface.
+            </li>
+            <li>
+              <strong className="text-white">Backend</strong>: Node.js/Express/Prisma serving authenticated GraphQL routes.
+            </li>
+            <li>
+              <strong className="text-white">Infrastructure</strong>: Docker & Docker Compose orchestration with Caddy as the secure reverse proxy.
+            </li>
+            <li>
+              <strong className="text-white">Data & Auth</strong>: Keycloak (OIDC) for identity management | Postgresql & Redis for persistence and caching.
+            </li>
+          </ul>
 
-Based on Ionic to provide a mobile / web app user experience and Electron to provide a desktop user experience (TODO later).
-
-Architecture: SOA / MSA using services:
-
-Backend: Node/Express/Prisma, it serves mainly a GraphQL authenticated route
-Frontend: React/Vite/Ionic, it generates a build that is served by service Proxy
-Database: Postgresql
-Authentication: Keycloak, using OpenId Connect authorization code flow, with SSO enabled using Google account
-Cache: Redis, data retrieved from database is cached 
-Proxy: Caddy as web server and reverse proxy, with TLS support, it’s the only exposed service 
-
-Services are contained inside Docker containers and orchestrated by Docker Compose.
-
-Deployment on a VPS located in the EU, using Komodo for CD.
-
-Communication between frontend and backend is performed with GraphQL (using Apollo stack).
-
-Provisioning of Keycloak and Postgresql are automated and performed in the container's build stage.
-
-Offline version using IndexedDb persistence (Dexie), online version using Postgresql persistence.
-
-Upcoming objectives are migration of services to Docker Hardened Image (DHI) and use of service workers to have better offline experience.
-
-The actual goal of this project is to have a boilerplate ready to develop modern mobile/web/desktop application and to train myself on new technologies.`,
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Key Highlights</h4>
+          <ul className="list-disc list-inside space-y-1 text-slate-300 mb-4">
+            <li>
+              <strong className="text-white">Offline-First</strong>: Leverages IndexedDB (Dexie) to allow full functionality without network access.
+            </li>
+            <li>
+              <strong className="text-white">CI/CD</strong>: Automated provisioning and deployment pipelines managed via Komodo.
+            </li>
+            <li>
+              <strong className="text-white">Objective</strong>: A production-ready boilerplate for developing secure, scalable modern applications.
+            </li>
+          </ul>
+        </>
+      ),
       tech: [
         "NodeJs",
         "Express",
@@ -68,29 +77,42 @@ The actual goal of this project is to have a boilerplate ready to develop modern
       ],
       icon: Smartphone,
       url: "https://notes.zplinux.eu",
+      images: [
+        "/images/zp-note-mobile-1.jpg",
+        "/images/zp-note-mobile-2.jpg",
+        "/images/zp-note-mobile-3.jpg",
+      ],
     },
     {
       title: "Zplinux Site",
       status: "Live",
-      desc: "My company web site, served as a PWA (desktop/mobile UX), created with assistance of gen AI (Antigravity / Gemini).",
-      details: `ZPLINUX SITE (https://zplinux.eu) (Paris - France) (personal open source project)
+      desc: "My professional portfolio, served as a high-performance PWA. Built with Next.js, Docker, and Generative AI assistance.",
+      details: (
+        <>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <p className="mb-4 text-slate-300">
+            My professional portfolio and company website, engineered as a high-performance PWA using modern web standards. Built in collaboration with generative AI (Antigravity/Gemini) to explore new development workflows.
+          </p>
 
-Role: Frontend Developer / Architect (NextJs / Tailwind / PWA)
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Technical Stack</h4>
+          <ul className="list-disc list-inside space-y-1 text-slate-300 mb-4">
+            <li>
+              <strong className="text-white">Core</strong>: Next.js 16 (App Router) & React 19 for a cutting-edge frontend.
+            </li>
+            <li>
+              <strong className="text-white">UI/UX</strong>: TailwindCSS, Lucide React, and Framer Motion for a polished, responsive design.
+            </li>
+            <li>
+              <strong className="text-white">Deployment</strong>: Statically exported (SSG) and served via Caddy within a containerized Docker environment.
+            </li>
+          </ul>
 
-This project consists of a Next.js frontend application that is statically exported and served via a Caddy web server, orchestrated using Docker Compose. 
-
-Architecture: 
-• Client (/client): The frontend application built with Next.js . Configured as a static site export. • Proxy (/proxy): Caddy web server serving static files and handling TLS. 
-• Infrastructure (/infra): Docker Compose configuration. 
-
-Tech Stack & Features: 
-• Next.js 16 (App Router) and React 19 
-• TailwindCSS & Lucide React & Framer Motion for UI 
-• Static Site Generation (SSG) 
-• Docker & Docker Compose for containerized deployment
-• Caddy for reverse proxy, web server and automatic HTTPS
-• Bootstrapped with Gemini/Antigravity
-• Installable as a PWA (Progressive Web App)`,
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Role</h4>
+          <p className="mb-4 text-slate-300">
+            Frontend Developer & Architect, focusing on clean code, performance optimization, and AI-assisted development paradigms.
+          </p>
+        </>
+      ),
       tech: [
         "NodeJs",
         "NextJs",
@@ -103,31 +125,45 @@ Tech Stack & Features:
         "PWA",
         "SSG",
         "Gemini",
-        "Antigravity"
+        "Antigravity",
       ],
       icon: Globe,
       url: "https://zplinux.eu",
+      images: [
+        "/images/zplinux-site-1.jpg",
+        "/images/zplinux-site-2.jpg",
+      ],
     },
     {
       title: "ZP Media Player",
-      status: "Personal Project",
-      desc: "Zp Media Player is a web application designed to play remote media content.",
-      details: `2015 – 2020: ZP Media player (http://player.zplinux.com) (personal legacy project - Tel Aviv – Israel)
-The target behind is to provide a personal cloud solution (hardware + os + software)
-It’s now a legacy project, I got stuck with breaking changes when trying to upgrade Meteor.
+      status: "Legacy",
+      desc: "A legacy personal cloud solution for managing and streaming remote media content.",
+      details: (
+        <>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <p className="mb-4 text-slate-300">
+            A personal cloud solution designed to manage and stream remote media content. This project represents a comprehensive "hardware + OS + software" architecture for personal media consumption.
+          </p>
 
-Role: Founder / Fullstack Developer (Meteor)
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Legacy Stack (2015–2020)</h4>
+          <ul className="list-disc list-inside space-y-1 text-slate-300 mb-4">
+            <li>
+              <strong className="text-white">Framework</strong>: Meteor (Node.js/MongoDB) with Blaze for reactive UI.
+            </li>
+            <li>
+              <strong className="text-white">Features</strong>: Custom HTML5 player, GridFS for media storage, and offline-ready design.
+            </li>
+            <li>
+              <strong className="text-white">DevOps</strong>: Deployed in LXC containers with strictly managed filesystem quotas.
+            </li>
+          </ul>
 
-Use of Meteor platform (built around NodeJs/MongoDB)
-Use of HTML5 audio/video player
-Backoffice using Orion package
-TDD and BDD (Jasmine, Cucumber)
-Use of Git (Gogs), Redmine (project management web app written in Rails)
-Agile as much as possible (Scrum sprints)
-Extensible, Offline ready by design
-Designed to run in a Lxc container 
-Management of free space per account and on filesystem (quota)
-Upload to db storage (gridfs/mongo)`,
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Context</h4>
+          <p className="mb-4 text-slate-300">
+            Developed as a full-stack solution to explore reactive web applications, TDD/BDD (Jasmine/Cucumber), and containerization before the dominance of modern Docker ecosystems.
+          </p>
+        </>
+      ),
       tech: [
         "Meteor",
         "MongoDB",
@@ -137,10 +173,11 @@ Upload to db storage (gridfs/mongo)`,
         "Scrum",
         "Lxc",
         "Git",
-        "Redmine"
+        "Redmine",
       ],
       icon: PlayCircle,
       url: "http://player.zplinux.com",
+      images: ["/images/zp-media-player-legacy.webp"],
     },
   ];
 

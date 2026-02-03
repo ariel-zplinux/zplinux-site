@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 interface Project {
     title: string;
     status: string;
-    desc: string;
     tech: string[];
     icon: LucideIcon;
-    details?: string; // For the extended "CV" content
+    desc: string;
+    details?: React.ReactNode;
     url?: string;
+    images?: string[];
 }
 
 interface ProjectModalProps {
@@ -77,7 +78,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                     {/* Tech Stack */}
                     <div className="mb-8">
-                        <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">Technologies</h4>
+                        <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">
+                            Technologies
+                        </h4>
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map((t) => (
                                 <span
@@ -91,13 +94,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </div>
 
                     {/* Extended Details / CV Content Placeholder */}
-                    <div className="bg-slate-950/50 rounded-xl p-6 border border-white/5">
+                    <div className="bg-slate-950/50 rounded-xl p-6 border border-white/5 mb-8">
                         <h4 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4">
                             Detailed Overview
                         </h4>
                         <div className="prose prose-invert prose-sm max-w-none text-slate-400">
                             {project.details ? (
-                                <div className="whitespace-pre-wrap">{project.details}</div>
+                                project.details
                             ) : (
                                 <p className="italic opacity-50">
                                     Detailed project notes from CV will appear here.
@@ -105,6 +108,29 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                             )}
                         </div>
                     </div>
+
+                    {/* Screenshots */}
+                    {project.images && project.images.length > 0 && (
+                        <div>
+                            <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
+                                Screenshots
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {project.images.map((img, index) => (
+                                    <div
+                                        key={index}
+                                        className="rounded-xl overflow-hidden border border-white/10 bg-slate-950"
+                                    >
+                                        <img
+                                            src={img}
+                                            alt={`${project.title} screenshot ${index + 1}`}
+                                            className="w-full h-auto object-cover"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </motion.div>
         </div>
