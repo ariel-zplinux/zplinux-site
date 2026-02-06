@@ -18,6 +18,7 @@ import AboutSection from "@/components/About";
 import ProjectsSection from "@/components/Projects";
 import ServicesSection from "@/components/Services";
 import ClientsSection from "@/components/Clients";
+import { ThemeToggle } from "@/components/theme-toggle";
 import ContactSection from "@/components/Contact";
 
 export default function ZplinuxHome() {
@@ -39,9 +40,9 @@ export default function ZplinuxHome() {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-100 selection:bg-blue-500/30 font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#020617] text-slate-900 dark:text-slate-100 selection:bg-blue-500/30 font-sans transition-colors duration-300">
       {/* --- Responsive Navbar --- */}
-      <nav className="fixed top-0 w-full z-[100] bg-slate-950/80 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed top-0 w-full z-[100] bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <div
             className="flex items-center gap-3 group cursor-pointer"
@@ -50,34 +51,38 @@ export default function ZplinuxHome() {
             <div className="bg-blue-600 p-2 rounded-lg group-hover:rotate-12 transition-transform">
               <Terminal className="text-white w-5 h-5" />
             </div>
-            <span className="font-black tracking-tighter text-2xl bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+            <span className="font-black tracking-tighter text-2xl bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
               ZPLINUX
             </span>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-2 bg-slate-900/50 p-1 rounded-full border border-white/5">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNav(item.id)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === item.id
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
-                    : "text-slate-400 hover:text-white"
-                  }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+          <div className="flex items-center gap-2 md:gap-4">
+            <ThemeToggle />
 
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-2 text-slate-400"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-2 bg-slate-200/50 dark:bg-slate-900/50 p-1 rounded-full border border-black/5 dark:border-white/5">
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNav(item.id)}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${activeTab === item.id
+                    ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                    }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Toggle */}
+            <button
+              className="md:hidden p-2 text-slate-600 dark:text-slate-400"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -89,13 +94,13 @@ export default function ZplinuxHome() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[90] bg-slate-950 flex flex-col justify-center items-center gap-8 md:hidden"
+            className="fixed inset-0 z-[90] bg-white dark:bg-slate-950 flex flex-col justify-center items-center gap-8 md:hidden"
           >
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNav(item.id)}
-                className={`text-3xl font-bold ${activeTab === item.id ? "text-blue-500" : "text-slate-500"}`}
+                className={`text-3xl font-bold ${activeTab === item.id ? "text-blue-500" : "text-slate-400 dark:text-slate-500"}`}
               >
                 {item.label}
               </button>

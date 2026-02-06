@@ -18,11 +18,12 @@ export default function AboutSection() {
       <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
         Ariel Biton
       </h1>
-      <p className="text-xl text-slate-400 leading-relaxed mb-8">
+      <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
         M.Sc. Computer Science (
         <a
           href="https://sciences.sorbonne-universite.fr/en/study/degree-seeking/masters/master-computer-science"
           target="_blank"
+          className="text-blue-600 dark:text-blue-400 hover:underline"
         >
           Sorbonne University
         </a>
@@ -34,24 +35,24 @@ export default function AboutSection() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-black/5 dark:border-slate-800 shadow-sm dark:shadow-none">
           <ShieldCheck className="text-blue-500 mb-2" />
-          <h3 className="font-bold">Privacy First</h3>
-          <p className="text-sm text-slate-500">
+          <h3 className="font-bold text-slate-900 dark:text-white">Privacy First</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-500">
             GDPR-compliant architectures by design.
           </p>
         </div>
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-black/5 dark:border-slate-800 shadow-sm dark:shadow-none">
           <Leaf className="text-emerald-500 mb-2" />
-          <h3 className="font-bold">Eco Principles</h3>
-          <p className="text-sm text-slate-500">
+          <h3 className="font-bold text-slate-900 dark:text-white">Eco Principles</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-500">
             Low-footprint, optimized code execution.
           </p>
         </div>
-        <div className="p-4 rounded-xl bg-slate-900 border border-slate-800">
+        <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-black/5 dark:border-slate-800 shadow-sm dark:shadow-none">
           <Code2 className="text-purple-500 mb-2" />
-          <h3 className="font-bold">Open Source</h3>
-          <p className="text-sm text-slate-500">
+          <h3 className="font-bold text-slate-900 dark:text-white">Open Source</h3>
+          <p className="text-sm text-slate-500 dark:text-slate-500">
             Deep commitment to community software.
           </p>
         </div>
@@ -62,7 +63,7 @@ export default function AboutSection() {
         <a
           href="/cv.pdf"
           target="_blank"
-          className="group relative flex items-center gap-3 px-8 py-4 bg-white text-slate-950 font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.15)] overflow-hidden"
+          className="group relative flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-10 transition-opacity" />
           <FileText className="w-5 h-5" />
@@ -71,7 +72,7 @@ export default function AboutSection() {
         </a>
 
         <a href="https://github.com/ariel-zplinux" target="_blank">
-          <button className="flex items-center gap-2 text-slate-400 hover:text-white px-6 py-4 transition-colors">
+          <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-6 py-4 transition-colors">
             <Github className="w-5 h-5" /> ariel-zplinux
           </button>
         </a>
@@ -79,7 +80,7 @@ export default function AboutSection() {
           href="https://www.linkedin.com/in/ariel-biton-59aa101/"
           target="_blank"
         >
-          <button className="flex items-center gap-2 text-slate-400 hover:text-white px-6 py-4 transition-colors">
+          <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-6 py-4 transition-colors">
             <Linkedin className="w-5 h-5" /> Linkedin
           </button>
         </a>
