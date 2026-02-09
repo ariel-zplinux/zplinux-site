@@ -6,7 +6,7 @@
 }
 
 
-{$AUTH_HOST_NAME:wip.zplinux.eu}:{$AUTH_HOST_PORT:443}, zplinux.eu:443, zplinux.com:443 {
+zplinux.eu:443, zplinux.com:443 {
 	handle {
 		root * /srv
 		try_files {path} /index.html
