@@ -5,7 +5,7 @@ export default function ServicesSection() {
     {
       title: "Backend Fullstack",
       icon: Server,
-      desc: "High-performance architectures built with Node.js, NestJs, and Next.js 15.",
+      desc: "High-performance architectures built with Node.js, NestJs, and Next.js 16.",
     },
     {
       title: "POC Maker",
