@@ -34,6 +34,11 @@ export default function RootLayout({
       <head>
         {/* Apple Touch Icon for iOS users */}
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="cb1e4e75-0217-4aa0-af74-01b0cc60e07c"
+        ></script>
       </head>
       <body>
         <ThemeProvider
