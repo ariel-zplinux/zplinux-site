@@ -1,0 +1,53 @@
+name: zplinux-site
+services:
+  proxy:
+    build:
+      context: ../proxy
+    ports:
+      - "443:443"
+    healthcheck:
+      test: "exit 0"
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.7"
+    depends_on:
+      client:
+        condition: service_completed_successfully
+    volumes:
+      - type: bind
+        source: ../proxy/Caddyfile.dev
+        target: /etc/caddy/Caddyfile
+        read_only: false
+      - shared:/srv
+  client:
+    build:
+      context: ../client
+    command:
+      - /bin/sh
+      - -c
+      - |
+        cp -r /source/. .
+        npm install
+        npm run build
+        cp -r ./dist/* ./shared/
+        exit 0
+    healthcheck:
+      test: ["NONE"]
+    networks:
+      network_sso:
+        ipv4_address: "10.0.0.6"
+    volumes:
+      - shared:/usr/src/app/shared
+      - ../client:/source:ro
+
+networks:
+  network_sso:
+    ipam:
+      # IP Address management
+      driver: default
+      # default = bridge
+      config:
+        - subnet: "10.0.0.0/24"
+
+volumes:
+  shared:

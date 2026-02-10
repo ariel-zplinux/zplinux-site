@@ -1,0 +1,20 @@
+{
+	http_port 23000
+	https_port 29443
+	email "ariel@zplinux.com"
+	metrics {
+	    per_host
+	}
+	# debug
+}
+
+zplinux.eu:4430 {
+	handle {
+		root * ../client/dist/
+		try_files {path} /index.html
+		file_server
+	}
+
+	tls internal
+	encode zstd gzip
+}
