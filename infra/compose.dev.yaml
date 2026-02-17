@@ -9,7 +9,7 @@ services:
       test: "exit 0"
     networks:
       network_sso:
-        ipv4_address: "10.0.0.7"
+        ipv4_address: "11.0.0.7"
     depends_on:
       client:
         condition: service_completed_successfully
@@ -32,10 +32,10 @@ services:
         cp -r ./dist/* ./shared/
         exit 0
     healthcheck:
-      test: ["NONE"]
+      test: [ "NONE" ]
     networks:
       network_sso:
-        ipv4_address: "10.0.0.6"
+        ipv4_address: "11.0.0.6"
     volumes:
       - shared:/usr/src/app/shared
       - ../client:/source:ro
@@ -47,7 +47,7 @@ networks:
       driver: default
       # default = bridge
       config:
-        - subnet: "10.0.0.0/24"
+        - subnet: "11.0.0.0/24"
 
 volumes:
   shared:
