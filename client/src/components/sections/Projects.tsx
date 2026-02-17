@@ -1,7 +1,9 @@
+"use client"
+
 import { useState } from "react";
 import { PlayCircle, Smartphone, Globe } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import ProjectModal from "./ProjectModal";
+import ProjectModal from "../ProjectModal";
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<any>(null);

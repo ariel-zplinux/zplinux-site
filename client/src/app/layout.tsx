@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -47,7 +48,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Navbar />
+          <main className="container mx-auto px-6 pt-32 pb-20">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
