@@ -23,7 +23,7 @@ export default function ServicesSection() {
       {services.map((s) => (
         <div
           key={s.title}
-          className="p-10 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-black/5 dark:border-white/5 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all shadow-sm dark:shadow-none"
+          className="p-10 rounded-4xl bg-white dark:bg-slate-900/50 border border-black/5 dark:border-white/5 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all shadow-sm dark:shadow-none"
         >
           <div className="w-14 h-14 bg-blue-600/10 rounded-2xl flex items-center justify-center mb-8">
             <s.icon className="text-blue-600 dark:text-blue-500" size={28} />

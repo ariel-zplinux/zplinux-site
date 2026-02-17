@@ -1,10 +1,17 @@
 export default function ClientsSection() {
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <a href="https://www.abilycare.com/" target="_blank">
-        <div className="p-10 rounded-[2.5rem] bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none">
-          <div className="flex justify-between items-start mb-6">
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Sharecare</h3>
+      <a href="https://www.sharecare.com/" target="_blank">
+        <div className="p-10 rounded-[2.5rem] bg-white dark:bg-linear-to-b dark:from-slate-900 dark:to-slate-950 border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none group transition-all hover:border-blue-500/20">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <img
+                src="/icons/Sharecare_Logo.png"
+                alt="Sharecare Logo"
+                className="h-10 w-auto object-contain dark:brightness-110"
+              />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Sharecare</h3>
+            </div>
             <span className="text-[10px] font-bold py-1 px-3 border border-blue-500/50 text-blue-600 dark:text-blue-500 rounded-full">
               Backend Lead Developer
             </span>
@@ -22,10 +29,17 @@ export default function ClientsSection() {
           </div>
         </div>
       </a>
-      <a href="https://www.sharecare.com/" target="_blank">
-        <div className="p-10 rounded-[2.5rem] bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none">
-          <div className="flex justify-between items-start mb-6">
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Abily Care</h3>
+      <a href="https://www.abilycare.com/" target="_blank">
+        <div className="p-10 rounded-[2.5rem] bg-white dark:bg-linear-to-b dark:from-slate-900 dark:to-slate-950 border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none group transition-all hover:border-emerald-500/20">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <img
+                src="/icons/abilycare_favico-300x300.png"
+                alt="AbilyCare Icon"
+                className="h-10 w-auto object-contain dark:brightness-125"
+              />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Abily Care</h3>
+            </div>
             <span className="text-[10px] font-bold py-1 px-3 border border-emerald-500/50 text-emerald-600 dark:text-emerald-500 rounded-full">
               Backend Developer
             </span>

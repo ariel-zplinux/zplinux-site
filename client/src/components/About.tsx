@@ -15,7 +15,7 @@ export default function AboutSection() {
       <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest">
         Based in Paris, EU
       </div>
-      <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+      <h1 className="text-5xl font-extrabold mb-6 bg-linear-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
         Ariel Biton
       </h1>
       <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
@@ -65,7 +65,7 @@ export default function AboutSection() {
           target="_blank"
           className="group relative flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-xl overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-10 transition-opacity" />
+          <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-emerald-400 opacity-0 group-hover:opacity-10 transition-opacity" />
           <FileText className="w-5 h-5" />
           Download CV
           <ExternalLink className="w-4 h-4 opacity-50 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
