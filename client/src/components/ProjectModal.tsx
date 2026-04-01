@@ -1,6 +1,6 @@
-import React from "react";
-import { X, LucideIcon, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { X, LucideIcon, ExternalLink, Maximize2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Project {
     title: string;
@@ -19,6 +19,24 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+    const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
+    // Close on Escape key
+    useEffect(() => {
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                if (expandedImage) {
+                    setExpandedImage(null);
+                } else {
+                    onClose();
+                }
+            }
+        };
+        window.addEventListener("keydown", handleEsc);
+
+        return () => window.removeEventListener("keydown", handleEsc);
+    }, [expandedImage, onClose]);
+
     return (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
             {/* Backdrop */}
@@ -119,13 +137,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                                 {project.images.map((img, index) => (
                                     <div
                                         key={index}
-                                        className="rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-gray-100 dark:bg-slate-950"
+                                        onClick={() => setExpandedImage(img)}
+                                        className="group relative rounded-xl overflow-hidden border border-black/10 dark:border-white/10 bg-gray-100 dark:bg-slate-950 cursor-pointer hover:shadow-lg transition-shadow"
                                     >
                                         <img
                                             src={img}
                                             alt={`${project.title} screenshot ${index + 1}`}
-                                            className="w-full h-auto object-cover"
+                                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
+                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                            <div className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white scale-90 group-hover:scale-100 transition-transform">
+                                                <Maximize2 size={24} />
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -133,6 +157,39 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     )}
                 </div>
             </motion.div>
+
+            {/* Image Lightbox Overlay */}
+            <AnimatePresence>
+                {expandedImage && (
+                    <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 md:p-12">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setExpandedImage(null)}
+                            className="absolute inset-0 bg-black/90 backdrop-blur-md cursor-zoom-out"
+                        />
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative max-w-full max-h-full flex items-center justify-center"
+                        >
+                            <img
+                                src={expandedImage}
+                                alt="Expanded project screenshot"
+                                className="max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain ring-1 ring-white/10"
+                            />
+                            <button
+                                onClick={() => setExpandedImage(null)}
+                                className="absolute top-0 right-0 -translate-y-12 md:translate-y-0 md:translate-x-12 p-3 text-white rounded-full transition-colors hover:bg-white/10"
+                            >
+                                <X size={32} />
+                            </button>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
