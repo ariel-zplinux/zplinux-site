@@ -1,10 +1,17 @@
+"use client";
+
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+
 export default function ContactSection() {
+  const { t } = useLanguage();
+
   return (
     <div className="py-20 text-center">
-      <h2 className="text-4xl font-bold mb-4 text-slate-900 dark:text-white">Start a Project</h2>
+      <h2 className="text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+        {t("contact.title")}
+      </h2>
       <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-lg mx-auto">
-        Based in the EU, available for freelance missions and technical
-        consulting.
+        {t("contact.desc")}
       </p>
       <a
         href="mailto:contact@zplinux.eu"
@@ -13,7 +20,7 @@ export default function ContactSection() {
         contact@zplinux.eu
       </a>
       <p className="mt-12 text-slate-500 dark:text-slate-500 font-medium">
-        Paris, FR — Worldwide Remote
+        {t("contact.location")}
       </p>
     </div>
   );

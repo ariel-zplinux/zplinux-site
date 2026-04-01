@@ -1,4 +1,10 @@
+"use client";
+
+import { useLanguage } from "@/lib/i18n/LanguageContext";
+
 export default function ClientsSection() {
+  const { t } = useLanguage();
+
   return (
     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
       <a href="https://www.sharecare.com/" target="_blank">
@@ -13,13 +19,11 @@ export default function ClientsSection() {
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Sharecare</h3>
             </div>
             <span className="text-[10px] font-bold py-1 px-3 border border-blue-500/50 text-blue-600 dark:text-blue-500 rounded-full">
-              Backend Lead Developer
+              {t("clients.sharecare.role")}
             </span>
           </div>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-            Created a health/wellness backend from scratch using NodeJs,
-            Express, and Azure. Implemented complex IAM flows and authorization
-            patterns.
+            {t("clients.sharecare.desc")}
           </p>
           <div className="flex gap-4 text-xs font-mono text-slate-500 dark:text-slate-500">
             <span>#NodeJs</span>
@@ -41,12 +45,11 @@ export default function ClientsSection() {
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Abily Care</h3>
             </div>
             <span className="text-[10px] font-bold py-1 px-3 border border-emerald-500/50 text-emerald-600 dark:text-emerald-500 rounded-full">
-              Backend Developer
+              {t("clients.abilycare.role")}
             </span>
           </div>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-            Built a Micro Services Architecture for elderly dynamism analysis.
-            Handled Docker orchestration and REST integrations.
+            {t("clients.abilycare.desc")}
           </p>
           <div className="flex gap-4 text-xs font-mono text-slate-500 dark:text-slate-500">
             <span>#NodeJs</span>

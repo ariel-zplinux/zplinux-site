@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "projects": "Projets",
+    "clients": "Clients",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "about": {
+    "location": "Basé à Paris, UE",
+    "name": "Ariel Biton",
+    "university": "Sorbonne Université",
+    "degree": "M.Sc. Informatique",
+    "title": "Développeur Senior Full-stack / Backend & Architecte",
+    "description": "Spécialisé dans la construction de backends robustes, hautement disponibles et de preuves de concept (POC) axés sur les écosystèmes Linux.",
+    "download_cv": "Télécharger le CV",
+    "privacy_title": "Priorité à la Confidentialité",
+    "privacy_desc": "Architectures conformes au RGPD dès la conception. La sécurité et la protection des données sont intégrées au cœur de la structure.",
+    "eco_title": "Principes Eco",
+    "eco_desc": "Exécution de code optimisée à faible empreinte. Systèmes hautement efficaces consommant intrinsèquement moins de ressources.",
+    "open_source_title": "Open Source",
+    "open_source_desc": "Engagement profond envers les logiciels communautaires. Exploitation et contribution directe aux outils open source.",
+    "status_online": "SYS_STATUS: EN LIGNE",
+    "status_uptime": "UPTIME: 99.99%"
+  },
+  "services": {
+    "title": "Expertise & Services",
+    "backend": {
+      "title": "Backend complet (Fullstack)",
+      "desc": "Concevoir des solutions backend hautement performantes et évolutives, en mettant l'accent sur la fiabilité.",
+      "f1": "Microservices Node.js & NestJS",
+      "f2": "APIs GraphQL & REST typées",
+      "f3": "Optimisation PostgreSQL & NoSQL",
+      "f4": "Intégration Full-stack Next.js"
+    },
+    "poc": {
+      "title": "Concepteur de POC",
+      "desc": "Transformer des idées conceptuelles en MVPs fonctionnels avec une rapidité d'exécution et une vision architecturale.",
+      "f1": "Prototypage Rapide (Next.js/Vite)",
+      "f2": "Modélisation de Schéma de Base de Données",
+      "f3": "Conception de l'Authentification & Sécurité",
+      "f4": "Déploiements Cloud-Ready"
+    },
+    "linux": {
+      "title": "Systèmes Linux",
+      "desc": "Expertise système approfondie pour optimiser l'infrastructure, simplifier l'orchestration et sécuriser l'environnement.",
+      "f1": "Conteneurisation Docker",
+      "f2": "Conception de Distributions Linux Personnalisées",
+      "f3": "Scripting Shell & Automatisation",
+      "f4": "Optimisation des Performances & Sécurité Hardening"
+    }
+  },
+  "projects": {
+    "title": "Projets Récents",
+    "status": {
+      "wip": "En cours",
+      "live": "En ligne",
+      "legacy": "Héritage"
+    },
+    "common": {
+      "tech": "Technologies",
+      "details": "Vue d'ensemble",
+      "screenshots": "Captures d'écran",
+      "more": "plus",
+      "overview": "Aperçu",
+      "architecture": "Architecture (SOA/MSA)",
+      "highlights": "Points Clés",
+      "stack": "Pile Technique",
+      "role": "Rôle",
+      "context": "Contexte",
+      "legacy_stack": "Ancienne Pile (2015–2020)"
+    },
+    "zp_note": {
+      "desc": "Une application de prise de notes hybride, moderne et axée sur la confidentialité. Migration de Capacitor vers une PWA robuste."
+    },
+    "zplinux_site": {
+      "desc": "Mon portfolio professionnel, servi comme une PWA haute performance. Construit avec Next.js, Docker et l'assistance de l'IA."
+    },
+    "zp_media": {
+      "desc": "Une solution de cloud personnel héritée pour la gestion et le streaming de contenu multimédia à distance."
+    }
+  },
+  "clients": {
+    "sharecare": {
+      "role": "Développeur Backend Principal",
+      "desc": "Création d'un backend santé/bien-être complet avec NodeJs, Express et Azure. Mise en œuvre de flux IAM complexes et de modèles d'autorisation."
+    },
+    "abilycare": {
+      "role": "Développeur Backend",
+      "desc": "Construction d'une architecture de micro-services pour l'analyse du dynamisme des personnes âgées. Gestion de l'orchestration Docker et des intégrations REST."
+    }
+  },
+  "contact": {
+    "title": "Démarrer un Projet",
+    "desc": "Basé dans l'UE, disponible pour des missions en freelance et du conseil technique.",
+    "location": "Paris, FR — À distance dans le monde entier"
+  }
+}

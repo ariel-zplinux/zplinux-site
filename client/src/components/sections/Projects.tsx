@@ -1,26 +1,28 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { PlayCircle, Smartphone, Globe } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import ProjectModal from "../ProjectModal";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function ProjectsSection() {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const projects = [
     {
       title: "ZP Note",
-      status: "Work in Progress",
-      desc: "A modern, privacy-focused hybrid note-taking app. Currently migrating from Capacitor to a robust PWA.",
+      status: t("projects.status.wip"),
+      desc: t("projects.zp_note.desc"),
       details: (
         <>
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.overview")}</h4>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
             A hybrid, open-source note-taking application designed for privacy and cross-platform compatibility. Delivered as a Progressive Web App (PWA) to ensure a seamless experience across mobile and web.
           </p>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Architecture (SOA/MSA)</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.architecture")}</h4>
           <ul className="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 mb-4">
             <li>
               <strong className="text-slate-900 dark:text-white">Frontend</strong>: React, Vite, and Ionic for a responsive, native-like interface.
@@ -36,7 +38,7 @@ export default function ProjectsSection() {
             </li>
           </ul>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Key Highlights</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.highlights")}</h4>
           <ul className="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 mb-4">
             <li>
               <strong className="text-slate-900 dark:text-white">Offline-First</strong>: Leverages IndexedDB (Dexie) to allow full functionality without network access.
@@ -87,16 +89,16 @@ export default function ProjectsSection() {
     },
     {
       title: "Zplinux Site",
-      status: "Live",
-      desc: "My professional portfolio, served as a high-performance PWA. Built with Next.js, Docker, and Generative AI assistance.",
+      status: t("projects.status.live"),
+      desc: t("projects.zplinux_site.desc"),
       details: (
         <>
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.overview")}</h4>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
             My professional portfolio and company website, engineered as a high-performance PWA using modern web standards. Built in collaboration with generative AI (Antigravity/Gemini) to explore new development workflows.
           </p>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Technical Stack</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.stack")}</h4>
           <ul className="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 mb-4">
             <li>
               <strong className="text-slate-900 dark:text-white">Core</strong>: Next.js 16 (App Router) & React 19 for a cutting-edge frontend.
@@ -109,7 +111,7 @@ export default function ProjectsSection() {
             </li>
           </ul>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Role</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.role")}</h4>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
             Frontend Developer & Architect, focusing on clean code, performance optimization, and AI-assisted development paradigms.
           </p>
@@ -138,16 +140,16 @@ export default function ProjectsSection() {
     },
     {
       title: "ZP Media Player",
-      status: "Legacy",
-      desc: "A legacy personal cloud solution for managing and streaming remote media content.",
+      status: t("projects.status.legacy"),
+      desc: t("projects.zp_media.desc"),
       details: (
         <>
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Overview</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.overview")}</h4>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
             A personal cloud solution designed to manage and stream remote media content. This project represents a comprehensive "hardware + OS + software" architecture for personal media consumption.
           </p>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Legacy Stack (2015–2020)</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.legacy_stack")}</h4>
           <ul className="list-disc list-inside space-y-1 text-slate-700 dark:text-slate-300 mb-4">
             <li>
               <strong className="text-slate-900 dark:text-white">Framework</strong>: Meteor (Node.js/MongoDB) with Blaze for reactive UI.
@@ -160,7 +162,7 @@ export default function ProjectsSection() {
             </li>
           </ul>
 
-          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">Context</h4>
+          <h4 className="text-lg font-semibold text-blue-400 mb-2 mt-4">{t("projects.common.context")}</h4>
           <p className="mb-4 text-slate-700 dark:text-slate-300">
             Developed as a full-stack solution to explore reactive web applications, TDD/BDD (Jasmine/Cucumber), and containerization before the dominance of modern Docker ecosystems.
           </p>
@@ -211,7 +213,7 @@ export default function ProjectsSection() {
               ))}
               {p.tech.length > 6 && (
                 <span className="px-3 py-1 bg-black/5 dark:bg-white/5 text-slate-500 dark:text-slate-400 text-xs rounded-full border border-black/5 dark:border-white/5">
-                  +{p.tech.length - 6} more
+                  +{p.tech.length - 6} {t("projects.common.more")}
                 </span>
               )}
             </div>

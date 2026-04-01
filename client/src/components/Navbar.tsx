@@ -15,21 +15,24 @@ import {
     Layers,
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
+    const { t } = useLanguage();
 
     const menuItems = [
-        { id: "about", label: "About", path: "/", icon: User },
-        { id: "services", label: "Services", path: "/services", icon: Server },
-        { id: "projects", label: "Projects", path: "/projects", icon: Layers },
-        { id: "clients", label: "Clients", path: "/clients", icon: Cpu },
-        { id: "contact", label: "Contact", path: "/contact", icon: Mail },
+        { id: "about", label: t("nav.about"), path: "/", icon: User },
+        { id: "services", label: t("nav.services"), path: "/services", icon: Server },
+        { id: "projects", label: t("nav.projects"), path: "/projects", icon: Layers },
+        { id: "clients", label: t("nav.clients"), path: "/clients", icon: Cpu },
+        { id: "contact", label: t("nav.contact"), path: "/contact", icon: Mail },
     ];
 
     const isActive = (path: string) => pathname === path || (path === "/about" && pathname === "/");
-    console.log({ isActive })
+
     return (
         <>
             <nav className="fixed top-0 w-full z-100 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
@@ -44,6 +47,11 @@ export default function Navbar() {
                     </Link>
 
                     <div className="flex items-center gap-2 md:gap-4">
+                        {/* Desktop Dropdown Switcher */}
+                        <div className="hidden md:block">
+                            <LanguageSwitcher />
+                        </div>
+                        
                         <ThemeToggle />
 
                         {/* Desktop Menu */}
@@ -64,9 +72,10 @@ export default function Navbar() {
 
                         {/* Mobile Toggle */}
                         <button
-                            className="md:hidden p-2 text-slate-600 dark:text-slate-400"
+                            className="md:hidden p-2 text-slate-600 dark:text-slate-400 flex items-center gap-2"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                         >
+                            <span className="text-sm font-bold text-slate-400 dark:text-slate-500 md:hidden">MENU</span>
                             {isMenuOpen ? <X /> : <Menu />}
                         </button>
                     </div>
@@ -83,6 +92,10 @@ export default function Navbar() {
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
                         className="fixed inset-0 z-90 bg-white dark:bg-slate-950 flex flex-col justify-center items-center gap-8 md:hidden"
                     >
+                        <div className="absolute top-24">
+                           <LanguageSwitcher />
+                        </div>
+
                         {menuItems.map((item) => (
                             <Link
                                 key={item.id}

@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { X, LucideIcon, ExternalLink, Maximize2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 interface Project {
     title: string;
@@ -19,6 +22,7 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+    const { t } = useLanguage();
     const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
     // Close on Escape key
@@ -33,7 +37,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             }
         };
         window.addEventListener("keydown", handleEsc);
-
         return () => window.removeEventListener("keydown", handleEsc);
     }, [expandedImage, onClose]);
 
@@ -97,7 +100,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {/* Tech Stack */}
                     <div className="mb-8">
                         <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">
-                            Technologies
+                            {t("projects.common.tech")}
                         </h4>
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map((t) => (
@@ -114,7 +117,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {/* Extended Details / CV Content Placeholder */}
                     <div className="bg-gray-100 dark:bg-slate-950/50 rounded-xl p-6 border border-black/5 dark:border-white/5 mb-8">
                         <h4 className="text-sm font-bold text-slate-900 dark:text-blue-400 uppercase tracking-widest mb-4">
-                            Detailed Overview
+                            {t("projects.common.details")}
                         </h4>
                         <div className="prose prose-sm max-w-none text-slate-900 dark:text-slate-400 prose-headings:text-slate-900 dark:prose-headings:text-slate-100 prose-strong:text-slate-900 dark:prose-strong:text-white">
                             {project.details ? (
@@ -131,7 +134,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {project.images && project.images.length > 0 && (
                         <div>
                             <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">
-                                Screenshots
+                                {t("projects.common.screenshots")}
                             </h4>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {project.images.map((img, index) => (

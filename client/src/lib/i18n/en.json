@@ -1,0 +1,99 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "clients": "Clients",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "about": {
+    "location": "Based in Paris, EU",
+    "name": "Ariel Biton",
+    "university": "Sorbonne University",
+    "degree": "M.Sc. Computer Science",
+    "title": "Senior Full-stack / Backend Developer & Architect",
+    "description": "Specializing in building robust, high-availability backends and proof-of-concepts with a focus on Linux ecosystems.",
+    "download_cv": "Download CV",
+    "privacy_title": "Privacy First",
+    "privacy_desc": "GDPR-compliant architectures by design. Security and data protection woven directly into the core structure.",
+    "eco_title": "Eco Principles",
+    "eco_desc": "Low-footprint, optimized code execution. Building highly efficient systems that inherently consume fewer resources.",
+    "open_source_title": "Open Source",
+    "open_source_desc": "Deep commitment to community software. Continually leveraging and directly contributing to open-source tools.",
+    "status_online": "SYS_STATUS: ONLINE",
+    "status_uptime": "UPTIME: 99.99%"
+  },
+  "services": {
+    "title": "Expert Services",
+    "backend": {
+      "title": "Backend Fullstack",
+      "desc": "Architecting high-performance, scalable server-side solutions with a focus on reliability and clean data flow.",
+      "f1": "Node.js & NestJS Microservices",
+      "f2": "Type-safe GraphQL & REST APIs",
+      "f3": "PostgreSQL & NoSQL Optimization",
+      "f4": "Next.js Full-stack Integration"
+    },
+    "poc": {
+      "title": "POC Maker",
+      "desc": "Transforming conceptual ideas into functional, production-ready MVPs with rapid speed and architectural foresight.",
+      "f1": "Rapid Prototyping (Next.js/Vite)",
+      "f2": "Database Schema Modeling",
+      "f3": "Authentication & Security Design",
+      "f4": "Cloud-Ready Deployments"
+    },
+    "linux": {
+      "title": "Linux Systems",
+      "desc": "Deep-level system expertise to optimize infrastructure, simplify orchestration, and harden environment security.",
+      "f1": "Docker Containerization",
+      "f2": "Custom Linux Distribution Design",
+      "f3": "Shell Scripting & Automation",
+      "f4": "Performance Tuning & Security Hardening"
+    }
+  },
+  "projects": {
+    "title": "Recent Projects",
+    "status": {
+      "wip": "Work in Progress",
+      "live": "Live",
+      "legacy": "Legacy"
+    },
+    "common": {
+      "tech": "Technologies",
+      "details": "Detailed Overview",
+      "screenshots": "Screenshots",
+      "more": "more",
+      "overview": "Overview",
+      "architecture": "Architecture (SOA/MSA)",
+      "highlights": "Key Highlights",
+      "stack": "Technical Stack",
+      "role": "Role",
+      "context": "Context",
+      "legacy_stack": "Legacy Stack (2015–2020)"
+    },
+    "zp_note": {
+      "desc": "A modern, privacy-focused hybrid note-taking app. Currently migrating from Capacitor to a robust PWA."
+    },
+    "zplinux_site": {
+      "desc": "My professional portfolio, served as a high-performance PWA. Built with Next.js, Docker, and Generative AI assistance."
+    },
+    "zp_media": {
+      "desc": "A legacy personal cloud solution for managing and streaming remote media content."
+    }
+  },
+  "clients": {
+    "sharecare": {
+      "role": "Backend Lead Developer",
+      "desc": "Created a health/wellness backend from scratch using NodeJs, Express, and Azure. Implemented complex IAM flows and authorization patterns."
+    },
+    "abilycare": {
+      "role": "Backend Developer",
+      "desc": "Built a Micro Services Architecture for elderly dynamism analysis. Handled Docker orchestration and REST integrations."
+    }
+  },
+  "contact": {
+    "title": "Start a Project",
+    "desc": "Based in the EU, available for freelance missions and technical consulting.",
+    "location": "Paris, FR — Worldwide Remote"
+  }
+}

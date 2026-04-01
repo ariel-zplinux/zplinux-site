@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -48,10 +49,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="container mx-auto px-6 pt-32 pb-20">
-            {children}
-          </main>
+          <LanguageProvider>
+            <Navbar />
+            <main className="container mx-auto px-6 pt-32 pb-20">
+              {children}
+            </main>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

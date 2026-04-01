@@ -1,56 +1,55 @@
+"use client";
+
 import { Server, Cpu, Terminal, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function ServicesSection() {
+  const { t } = useLanguage();
+
   const services = [
     {
-      title: "Backend Fullstack",
+      title: t("services.backend.title"),
       icon: Server,
       accent: "blue",
-      desc: "Architecting high-performance, scalable server-side solutions with a focus on reliability and clean data flow.",
+      desc: t("services.backend.desc"),
       features: [
-        "Node.js & NestJS Microservices",
-        "Type-safe GraphQL & REST APIs",
-        "PostgreSQL & NoSQL Optimization",
-        "Next.js Full-stack Integration",
+        t("services.backend.f1"),
+        t("services.backend.f2"),
+        t("services.backend.f3"),
+        t("services.backend.f4"),
       ],
     },
     {
-      title: "POC Maker",
+      title: t("services.poc.title"),
       icon: Cpu,
       accent: "emerald",
-      desc: "Transforming conceptual ideas into functional, production-ready MVPs with rapid speed and architectural foresight.",
+      desc: t("services.poc.desc"),
       features: [
-        "Rapid Prototyping (Next.js/Vite)",
-        "Database Schema Modeling",
-        "Authentication & Security Design",
-        "Cloud-Ready Deployments",
+        t("services.poc.f1"),
+        t("services.poc.f2"),
+        t("services.poc.f3"),
+        t("services.poc.f4"),
       ],
     },
     {
-      title: "Linux Systems",
+      title: t("services.linux.title"),
       icon: Terminal,
       accent: "purple",
-      desc: "Deep-level system expertise to optimize infrastructure, simplify orchestration, and harden environment security.",
+      desc: t("services.linux.desc"),
       features: [
-        "Docker Containerization",
-        "Custom Linux Distribution Design",
-        "Shell Scripting & Automation",
-        "Performance Tuning & Security Hardening",
+        t("services.linux.f1"),
+        t("services.linux.f2"),
+        t("services.linux.f3"),
+        t("services.linux.f4"),
       ],
     },
   ];
-
-  const colors = {
-    blue: "from-blue-500/20 to-blue-600/5 text-blue-600 dark:text-blue-400 border-blue-500/20 bg-blue-500/10",
-    emerald: "from-emerald-500/20 to-emerald-600/5 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 bg-emerald-500/10",
-    purple: "from-purple-500/20 to-purple-600/5 text-purple-600 dark:text-purple-400 border-purple-500/20 bg-purple-500/10",
-  };
 
   return (
     <div className="max-w-6xl mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold mb-4 bg-linear-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400 bg-clip-text text-transparent">
-          Expert Services
+          {t("services.title")}
         </h2>
         <div className="w-20 h-1.5 bg-linear-to-r from-blue-500 to-emerald-500 mx-auto rounded-full" />
       </div>
