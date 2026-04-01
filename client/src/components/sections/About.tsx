@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Code2,
@@ -84,14 +86,14 @@ export default function AboutSection() {
             {/* Tech overlays */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-white/90 text-sm font-mono opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-               <span className="flex items-center gap-2">
-                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div> 
-                 {t("about.status_online")}
-               </span>
-               <span className="flex items-center gap-2">
-                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-[pulse_2s_ease-in-out_infinite]"></div> 
-                 {t("about.status_uptime")}
-               </span>
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                {t("about.status_online")}
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-[pulse_2s_ease-in-out_infinite]"></div>
+                {t("about.status_uptime")}
+              </span>
             </div>
           </div>
         </div>
