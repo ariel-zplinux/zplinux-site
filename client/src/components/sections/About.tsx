@@ -60,7 +60,7 @@ export default function AboutSection() {
                 </button>
               </a>
               <a
-                href="https://www.linkedin.com/in/ariel-biton-59aa101/"
+                href="https://www.linkedin.com/in/ariel-biton-zplinux/"
                 target="_blank"
               >
                 <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-6 py-4 transition-colors">
@@ -104,7 +104,9 @@ export default function AboutSection() {
           <div className="w-14 h-14 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
             <ShieldCheck className="text-blue-500 w-7 h-7" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{t("about.privacy_title")}</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            {t("about.privacy_title")}
+          </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             {t("about.privacy_desc")}
           </p>
@@ -113,7 +115,9 @@ export default function AboutSection() {
           <div className="w-14 h-14 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
             <Leaf className="text-emerald-500 w-7 h-7" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{t("about.eco_title")}</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            {t("about.eco_title")}
+          </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             {t("about.eco_desc")}
           </p>
@@ -122,7 +126,9 @@ export default function AboutSection() {
           <div className="w-14 h-14 rounded-xl bg-purple-50 dark:bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
             <Code2 className="text-purple-500 w-7 h-7" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{t("about.open_source_title")}</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+            {t("about.open_source_title")}
+          </h3>
           <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             {t("about.open_source_desc")}
           </p>

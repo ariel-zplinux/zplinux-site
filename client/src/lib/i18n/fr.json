@@ -27,7 +27,7 @@
   "services": {
     "title": "Expertise & Services",
     "backend": {
-      "title": "Backend complet (Fullstack)",
+      "title": "Backend Fullstack",
       "desc": "Concevoir des solutions backend hautement performantes et évolutives, en mettant l'accent sur la fiabilité.",
       "f1": "Microservices Node.js & NestJS",
       "f2": "APIs GraphQL & REST typées",
@@ -56,7 +56,7 @@
     "status": {
       "wip": "En cours",
       "live": "En ligne",
-      "legacy": "Héritage"
+      "legacy": "Legacy"
     },
     "common": {
       "tech": "Technologies",
@@ -66,16 +66,16 @@
       "overview": "Aperçu",
       "architecture": "Architecture (SOA/MSA)",
       "highlights": "Points Clés",
-      "stack": "Pile Technique",
+      "stack": "Stack",
       "role": "Rôle",
       "context": "Contexte",
-      "legacy_stack": "Ancienne Pile (2015–2020)"
+      "legacy_stack": "Legacy Stack (2015–2020)"
     },
     "zp_note": {
       "desc": "Une application de prise de notes hybride, moderne et axée sur la confidentialité. Migration de Capacitor vers une PWA robuste."
     },
     "zplinux_site": {
-      "desc": "Mon portfolio professionnel, servi comme une PWA haute performance. Construit avec Next.js, Docker et l'assistance de l'IA."
+      "desc": "Mon portfolio professionnel, servi comme une PWA haute performance. Construit avec Next.js, Docker et l'assistance de l'IA générative."
     },
     "zp_media": {
       "desc": "Une solution de cloud personnel héritée pour la gestion et le streaming de contenu multimédia à distance."
