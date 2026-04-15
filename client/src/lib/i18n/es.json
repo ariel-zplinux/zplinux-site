@@ -69,7 +69,9 @@
       "stack": "Pila Tecnológica",
       "role": "Rol",
       "context": "Contexto",
-      "legacy_stack": "Antigua Pila (2015–2020)"
+      "legacy_stack": "Antigua Pila (2015–2020)",
+      "visit_site": "Visitar sitio en vivo",
+      "view_github": "Ver repositorio en GitHub"
     },
     "zp_note": {
       "desc": "Una aplicación híbrida moderna y privada para toma de notas. Migración de Capacitor a una PWA robusta."

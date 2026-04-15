@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, LucideIcon, ExternalLink, Maximize2 } from "lucide-react";
+import { X, LucideIcon, ExternalLink, Maximize2, Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -13,6 +13,7 @@ interface Project {
     desc: string;
     details?: React.ReactNode;
     url?: string;
+    githubUrl?: string;
     images?: string[];
 }
 
@@ -73,8 +74,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="p-1 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                        title={t("projects.common.visit_site")}
                                     >
                                         <ExternalLink size={18} />
+                                    </a>
+                                )}
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-1 text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                        title={t("projects.common.view_github")}
+                                    >
+                                        <Github size={18} />
                                     </a>
                                 )}
                             </h3>

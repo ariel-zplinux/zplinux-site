@@ -133,6 +133,7 @@ export default function ProjectsSection() {
       ],
       icon: Globe,
       url: "https://zplinux.eu",
+      githubUrl: "https://github.com/ariel-zplinux/zplinux-site",
       images: [
         "/images/zplinux-site-1.jpg",
         "/images/zplinux-site-2.jpg",

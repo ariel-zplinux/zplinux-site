@@ -69,7 +69,9 @@
       "stack": "Stack",
       "role": "Rôle",
       "context": "Contexte",
-      "legacy_stack": "Legacy Stack (2015–2020)"
+      "legacy_stack": "Legacy Stack (2015–2020)",
+      "visit_site": "Voir le site en ligne",
+      "view_github": "Voir le dépôt GitHub"
     },
     "zp_note": {
       "desc": "Une application de prise de notes hybride, moderne et axée sur la confidentialité. Migration de Capacitor vers une PWA robuste."
