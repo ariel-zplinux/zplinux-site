@@ -7,8 +7,8 @@ import {
   Leaf,
   ExternalLink,
   FileText,
-  Github,
-  Linkedin,
+  FolderGit,
+  FileUser,
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
@@ -56,7 +56,7 @@ export default function AboutSection() {
             <div className="flex gap-2">
               <a href="https://github.com/ariel-zplinux" target="_blank">
                 <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-6 py-4 transition-colors">
-                  <Github className="w-5 h-5" /> ariel-zplinux
+                  <FolderGit className="w-5 h-5" /> ariel-zplinux
                 </button>
               </a>
               <a
@@ -64,7 +64,7 @@ export default function AboutSection() {
                 target="_blank"
               >
                 <button className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white px-6 py-4 transition-colors">
-                  <Linkedin className="w-5 h-5" /> Linkedin
+                  <FileUser className="w-5 h-5" /> Linkedin
                 </button>
               </a>
             </div>
