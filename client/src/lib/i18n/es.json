@@ -91,6 +91,10 @@
     "abilycare": {
       "role": "Desarrollador Backend",
       "desc": "Construcción de una arquitectura de microservicios para el análisis del dinamismo de personas mayores. Gestión de la orquestación de Docker e integraciones REST."
+    },
+    "yem": {
+      "role": "Desarrollador Fullstack",
+      "desc": "Desarrollo de un mercado energético B2B multilingüe con características de optimización predictiva, copias de seguridad automáticas, sharding y notificaciones SMS."
     }
   },
   "contact": {

@@ -91,6 +91,10 @@
     "abilycare": {
       "role": "Backend Developer",
       "desc": "Built a Micro Services Architecture for elderly dynamism analysis. Handled Docker orchestration and REST integrations."
+    },
+    "yem": {
+      "role": "Fullstack Developer",
+      "desc": "Developed a multi-language B2B energy marketplace with predictive optimization features, automated backups, sharding, and SMS notifications."
     }
   },
   "contact": {

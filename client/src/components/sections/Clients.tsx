@@ -59,6 +59,33 @@ export default function ClientsSection() {
           </div>
         </div>
       </a>
+      <a href="https://yem-energy.com" target="_blank">
+        <div className="p-10 rounded-[2.5rem] bg-white dark:bg-linear-to-b dark:from-slate-900 dark:to-slate-950 border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none group transition-all hover:border-orange-500/20">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-4">
+              <img
+                src="/icons/YEM-Orange-Gradient.svg"
+                alt="YEM Logo"
+                className="h-10 w-auto object-contain dark:brightness-125"
+              />
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">YEM</h3>
+            </div>
+            <span className="text-[10px] font-bold py-1 px-3 border border-orange-500/50 text-orange-600 dark:text-orange-500 rounded-full">
+              {t("clients.yem.role")}
+            </span>
+          </div>
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+            {t("clients.yem.desc")}
+          </p>
+          <div className="flex gap-4 text-xs font-mono text-slate-500 dark:text-slate-500">
+            <span>#NodeJs</span>
+            <span>#Express</span>
+            <span>#MongoDB</span>
+            <span>#React</span>
+            <span>#AWS</span>
+          </div>
+        </div>
+      </a>
     </div>
   );
 }
